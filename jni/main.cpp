@@ -33,9 +33,11 @@ int main(int argc, char *argv[])
     printf("addr:%x\n", &testData);
     printf("test_value:%x\n", testData);
 
-    ssize_t realRead = read(nDriverLink, buf, 4);
+    // ssize_t realRead = read(nDriverLink, buf, 4);
+    ssize_t res = write(nDriverLink, buf, 4);
 
-    printf("dirver_value:%x\n",*(int*)buf);
+    // printf("dirver_value:%x\n",*(int*)buf);
+    printf("dirver_value:%x\n",testData);
 
     close(nDriverLink);
 }
